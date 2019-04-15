@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux'
 
-import counterReducer, { incActionCreator, decActionCreator} from './state/counter'
+import counter, { incActionCreator, decActionCreator} from './state/counter'
 
 const reducer = combineReducers({
-    counter: counterReducer,
+    counter,
 })
 
 
