@@ -1,12 +1,13 @@
 const SEND = 'messages/SEND'
 
-const sendActionCreator = (receiver, text) => ({
+export const sendActionCreator = (receiver, text) => ({
    type: SEND,
    receiver,
    text,
 
 })
 const initialState = {}
+
 
 export default (state = initialState, action) => {
    switch (action.type) {

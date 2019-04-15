@@ -1,4 +1,4 @@
-//action types
+action types
 
 const INC = 'counter/INC'
 const DEC = 'counter/DEC'
