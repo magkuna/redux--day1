@@ -6,24 +6,36 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     console.log(state, action)
-    
-    if(action.type === 'INC'){
-       return {
-           ...state,
-           number: state.number + 1
-       } 
-    } 
-        return state
+
+    if (action.type === 'INC') {
+        return {
+            ...state,
+            number: state.number + 1
+        }
     }
-
-
-    export const store = createStore(
-        reducer,
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
-    const incAction = {
-        type: 'INC'
-
+    if (action.type === 'DEC') {
+        return {
+            ...state,
+            number: state.number - 1
+        }
     }
+    return state
 
-    store.dispatch(incAction)
+}
+
+
+export const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+const incAction = {
+    type: 'INC',
+
+}
+const decAction = {
+    type: 'DEC',
+
+}
+
+store.dispatch(incAction)
+store.dispatch(decAction)
